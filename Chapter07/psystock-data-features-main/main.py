@@ -15,9 +15,9 @@ def _run(entrypoint, parameters={}, source_version=None, use_cache=True):
 def workflow():
     with mlflow.start_run(run_name ="pystock-data-pipeline") as active_run:
         mlflow.set_tag("mlflow.runName", "pystock-data-pipeline")
-        _run("load_raw_data")
-        _run("clean_validate_data")
-        _run("feature_set_generation")
+        _run("load_raw_data") # name from MLproject
+        _run("clean_validate_data") # name from MLproject
+        _run("feature_set_generation") # name from MLproject
         
         
 if __name__=="__main__":

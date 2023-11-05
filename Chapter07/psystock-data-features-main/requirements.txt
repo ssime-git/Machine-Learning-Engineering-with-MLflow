@@ -1,0 +1,7 @@
+mlflow
+pandas
+numpy
+pandas_datareader
+click
+pandas_profiling
+great_expectations

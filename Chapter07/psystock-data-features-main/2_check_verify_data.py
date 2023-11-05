@@ -4,7 +4,7 @@ from dateutil.relativedelta import relativedelta
 import pprint
 import pandas_datareader
 import pandas
-from pandas_profiling import ProfileReport
+#from pandas_profiling import ProfileReport
 import great_expectations as ge
 from great_expectations.profile.basic_dataset_profiler import BasicDatasetProfiler
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
         mlflow.set_tag("mlflow.runName", "check_verify_data")
 
-        df = pandas.read_csv("./data/raw/data.csv")
+        df = pandas.read_csv("./data/raw/data-update.csv")
 
         describe_to_dict=df.describe().to_dict()
         mlflow.log_dict(describe_to_dict,"describe_data.json")
@@ -33,6 +33,6 @@ if __name__ == "__main__":
         df.dropna(inplace=True)
 
         #if data_passes_quality_can_go_to_features:
-        df.to_csv("data/staging/data.csv")
+        df.to_csv("data/staging/data-update.csv")
 
         
